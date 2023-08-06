@@ -1,0 +1,5 @@
+packages:
+  - 'packages/*'
+  - 'packages/lua.ts/platforms/*'
+  - 'packages/lua.ts/packages/*'
+  - 'packages/lua.ts/homepage'

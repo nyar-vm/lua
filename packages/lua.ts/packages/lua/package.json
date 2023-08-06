@@ -1,0 +1,48 @@
+{
+    "name": "@nyar/lua",
+    "version": "0.1.0",
+    "description": "Lua language services - parser, tokens, diagnostics and highlighting (Node-API)",
+    "type": "module",
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "exports": {
+        ".": "./dist/index.js",
+        "./cli": "./dist/cli/lua-cli.js",
+        "./native": "./dist/native.js"
+    },
+    "bin": {
+        "lua": "bin/lua.mjs"
+    },
+    "files": [
+        "bin",
+        "dist",
+        "src",
+        "locales",
+        "readme.md"
+    ],
+    "dependencies": {
+        "@vmz/commander": "^0.3.18"
+    },
+    "optionalDependencies": {
+        "@nyar/lua-darwin-arm64": "workspace:*",
+        "@nyar/lua-darwin-x64": "workspace:*",
+        "@nyar/lua-linux-x64": "workspace:*",
+        "@nyar/lua-win32-x64": "workspace:*"
+    },
+    "scripts": {
+        "build": "node ../../../../scripts/build-npm-package-js.mjs packages/lua.ts/packages/lua",
+        "prepack": "node ../../../../scripts/build-npm-package-js.mjs packages/lua.ts/packages/lua && node ../../../../scripts/prepare-npm-publish.mjs"
+    },
+    "engines": {
+        "node": ">=22.18.0"
+    },
+    "keywords": ["lua", "parser", "language-server", "vmz"],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nyar-vm/lua.git",
+        "directory": "packages/lua.ts/packages/lua"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

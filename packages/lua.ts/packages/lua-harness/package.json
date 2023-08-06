@@ -1,0 +1,48 @@
+{
+    "name": "@nyar/lua-harness",
+    "version": "0.1.0",
+    "description": "Lua diagnostics and tuning harness over @nyar/lua",
+    "type": "module",
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "exports": {
+        ".": "./dist/index.js",
+        "./cli": "./dist/cli.js"
+    },
+    "bin": {
+        "lua-harness": "bin/lua-harness.mjs"
+    },
+    "files": [
+        "bin",
+        "dist",
+        "src",
+        "locales",
+        "readme.md"
+    ],
+    "dependencies": {
+        "@nyar/lua": "workspace:*",
+        "@vmz/commander": "^0.3.18"
+    },
+    "optionalDependencies": {
+        "@nyar/lua-darwin-arm64": "workspace:*",
+        "@nyar/lua-darwin-x64": "workspace:*",
+        "@nyar/lua-linux-x64": "workspace:*",
+        "@nyar/lua-win32-x64": "workspace:*"
+    },
+    "scripts": {
+        "build": "node ../../../../scripts/build-npm-package-js.mjs packages/lua.ts/packages/lua-harness",
+        "prepack": "node ../../../../scripts/build-npm-package-js.mjs packages/lua.ts/packages/lua-harness && node ../../../../scripts/prepare-npm-publish.mjs"
+    },
+    "engines": {
+        "node": ">=22.18.0"
+    },
+    "keywords": ["lua", "harness", "diagnostics", "tuning"],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nyar-vm/lua.git",
+        "directory": "packages/lua.ts/packages/lua-harness"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

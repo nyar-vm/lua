@@ -1,0 +1,24 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "packages/lua.rs/lua-npai",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = ["Nyar Team"]
+license = "MIT"
+repository = "https://github.com/nyar-vm/lua"
+
+[workspace.dependencies]
+# The Lua language implementation lives in Boost `language.lua` (parser in `data.text.lua`).
+# This repository owns only the Node-API export layer.
+language-lua = { git = "https://github.com/oovm/boost.rs", rev = "08b77a39e67b5a074a05f0a8ee5269670f336f4a" }
+data-text-core = { git = "https://github.com/oovm/boost.rs", rev = "08b77a39e67b5a074a05f0a8ee5269670f336f4a" }
+data-text-lua = { git = "https://github.com/oovm/boost.rs", rev = "08b77a39e67b5a074a05f0a8ee5269670f336f4a" }
+
+napi = { version = "3.16.2", default-features = true, features = ["napi4"] }
+napi-derive = "3.7.1"
+napi-build = "2.6.0"

@@ -1,0 +1,5 @@
+lib/
+*.node
+lua_napi.dll
+liblua_napi.so
+liblua_napi.dylib

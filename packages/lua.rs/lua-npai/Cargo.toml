@@ -1,0 +1,23 @@
+[package]
+name = "lua-napi"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Lua Node-API export library: parsing, lexing and highlighting over Boost `language.lua`"
+
+[lib]
+name = "lua_napi"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+language-lua = { workspace = true }
+data-text-core = { workspace = true }
+data-text-lua = { workspace = true }
+napi = { workspace = true }
+napi-derive = { workspace = true }
+
+[build-dependencies]
+napi-build = { workspace = true }

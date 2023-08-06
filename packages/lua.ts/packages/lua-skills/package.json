@@ -1,0 +1,23 @@
+{
+    "name": "@nyar/lua-skills",
+    "version": "0.1.0",
+    "description": "Agent Skills for using the Lua language services package",
+    "type": "module",
+    "license": "MIT",
+    "files": [
+        "skills",
+        "README.md"
+    ],
+    "scripts": {
+        "typecheck": "node -e \"console.log('docs-only skill package')\""
+    },
+    "keywords": ["lua", "skills", "agent", "language-services"],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nyar-vm/lua.git",
+        "directory": "packages/lua.ts/packages/lua-skills"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
